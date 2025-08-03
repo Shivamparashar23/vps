@@ -1230,7 +1230,7 @@ async def txt_handler(bot: Client, m: Message):
                     else:
                         try:
                             cmd = f'yt-dlp -o "{name}.pdf" "{url}"'
-                            download_cmd = f"{cmd} -R 25 --fragment-retries 25"
+                            download_cmd = f"{cmd} -R 100 --fragment-retries 100"
                             os.system(download_cmd)
                             copy = await bot.send_document(chat_id=channel_id, document=f'{name}.pdf', caption=cc1)
                             count += 1
@@ -1256,7 +1256,7 @@ async def txt_handler(bot: Client, m: Message):
                     try:
                         ext = url.split('.')[-1]
                         cmd = f'yt-dlp -o "{name}.{ext}" "{url}"'
-                        download_cmd = f"{cmd} -R 25 --fragment-retries 25"
+                        download_cmd = f"{cmd} -R 100 --fragment-retries 100"
                         os.system(download_cmd)
                         copy = await bot.send_photo(chat_id=channel_id, photo=f'{name}.{ext}', caption=ccimg)
                         count += 1
@@ -1270,7 +1270,7 @@ async def txt_handler(bot: Client, m: Message):
                     try:
                         ext = url.split('.')[-1]
                         cmd = f'yt-dlp -o "{name}.{ext}" "{url}"'
-                        download_cmd = f"{cmd} -R 25 --fragment-retries 25"
+                        download_cmd = f"{cmd} -R 100 --fragment-retries 100"
                         os.system(download_cmd)
                         copy = await bot.send_document(chat_id=channel_id, document=f'{name}.{ext}', caption=ccm)
                         count += 1
@@ -1581,7 +1581,7 @@ async def text_handler(bot: Client, m: Message):
                     else:
                         try:
                             cmd = f'yt-dlp -o "{name}.pdf" "{url}"'
-                            download_cmd = f"{cmd} -R 25 --fragment-retries 25"
+                            download_cmd = f"{cmd} -R 100 --fragment-retries 100"
                             os.system(download_cmd)
                             copy = await bot.send_document(chat_id=m.chat.id, document=f'{name}.pdf', caption=cc1)
                             os.remove(f'{name}.pdf')
@@ -1594,7 +1594,7 @@ async def text_handler(bot: Client, m: Message):
                     try:
                         ext = url.split('.')[-1]
                         cmd = f'yt-dlp -x --audio-format {ext} -o "{name}.{ext}" "{url}"'
-                        download_cmd = f"{cmd} -R 25 --fragment-retries 25"
+                        download_cmd = f"{cmd} -R 100 --fragment-retries 100"
                         os.system(download_cmd)
                         await bot.send_document(chat_id=m.chat.id, document=f'{name}.{ext}', caption=cc1)
                         os.remove(f'{name}.{ext}')
@@ -1607,7 +1607,7 @@ async def text_handler(bot: Client, m: Message):
                     try:
                         ext = url.split('.')[-1]
                         cmd = f'yt-dlp -o "{name}.{ext}" "{url}"'
-                        download_cmd = f"{cmd} -R 25 --fragment-retries 25"
+                        download_cmd = f"{cmd} -R 100 --fragment-retries 100"
                         os.system(download_cmd)
                         copy = await bot.send_photo(chat_id=m.chat.id, photo=f'{name}.{ext}', caption=cc1)
                         count += 1
